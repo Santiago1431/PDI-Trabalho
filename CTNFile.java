@@ -1,3 +1,9 @@
+/**
+ * Rastreamento e Decodificação de Código de Cadeia 8-Direcional (Freeman)
+ * Eurico Santiago Climaco Rodrigues
+ * PDI - Processamento Digital de Imagens
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
