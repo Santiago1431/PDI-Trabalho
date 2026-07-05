@@ -80,3 +80,17 @@ Os arquivos gerados na codificação e lidos na decodificação seguem estritame
 273
 E400000000001C01C01C703F...
 ```
+
+---
+
+
+
+## ⚠️ Limitações do Algoritmo
+
+Este projeto foi desenhado sob a premissa de processar **um único objeto conexo por imagem**.
+
+Caso seja fornecida uma imagem contendo múltiplos objetos isolados (como por exemplo o arquivo `bolas.pbm` contendo várias esferas independentes):
+1. A busca pelo ponto de início (`pontoInicial`) realiza uma varredura raster (de cima para baixo, esquerda para a direita) e irá parar assim que detectar o primeiro pixel preto (`1`) pertencente a qualquer uma das esferas.
+2. O algoritmo irá rastrear, codificar e gravar **apenas o contorno dessa primeira esfera encontrada**. Os outros objetos serão completamente ignorados.
+
+Para processar múltiplos objetos, seria necessária uma extensão do algoritmo com controle de pixels já visitados/contornados em toda a grade da imagem.
